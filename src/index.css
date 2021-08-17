@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'PixulBrush';
+  src: local('PixulBrush'), url(./assets/fonts/PixulBrush.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'BigBoldPixel';
+  src: local('BigBoldPixel'), url(./assets/fonts/BigBoldPixel.woff) format('woff');
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
