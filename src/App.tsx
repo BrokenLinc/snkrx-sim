@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import { Box, Flex, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import useQueryState from 'use-query-state';
 
 import { SNKRX_CLASS, SNEK } from './data/manual-entry';
@@ -24,7 +24,16 @@ const App: React.FC = () => {
 
   return (
     <Flex height="100%">
-      <Flex py={4} px={4} overflowY="auto" flex="10 10 480px" bg="gray.800" alignItems="center" direction="column">
+      <Flex
+        py={4}
+        px={4}
+        pb={100}
+        overflowY="auto"
+        flex="10 10 480px"
+        bg="gray.800"
+        alignItems="center"
+        direction="column"
+      >
         <Heading size="xs" mb={6}>
           Characters
         </Heading>
@@ -40,7 +49,7 @@ const App: React.FC = () => {
           ))}
         </Box>
       </Flex>
-      <Box py={4} px={4} overflowY="auto" flex="1 1 280px">
+      <Box py={4} px={4} pb={100} overflowY="auto" flex="1 1 280px">
         <Flex direction="column" alignItems="center">
           <Heading size="xs" mb={6}>
             Classes
@@ -52,7 +61,7 @@ const App: React.FC = () => {
           </SimpleGrid>
         </Flex>
       </Box>
-      <Box py={4} px={4} overflowY="auto" flex="1 1 280px">
+      <Box py={4} px={4} pb={100} overflowY="auto" flex="1 1 280px">
         <Heading size="xs" mb={6}>
           {snekLength}/{Math.max(snekLength, 7)} {snekLength > 7 ? `(NG+${snekLength - 7})` : null}
         </Heading>
@@ -62,6 +71,9 @@ const App: React.FC = () => {
           if (!snek) return null;
           return <SNKRXCharacterComponent key={snek.key} snek={snek} onClick={() => toggleSnek(snek.key)} />;
         })}
+      </Box>
+      <Box position="absolute" bottom={4} right={4} py={4} px={8} borderRadius={8} bg="gray.900">
+        <Text fontSize={12}>This fan-site is unaffilliated with SNKRX or a327ex.</Text>
       </Box>
     </Flex>
   );
